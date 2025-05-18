@@ -1,0 +1,68 @@
+<div class="add-property-container">
+  <h2 class="title">أضف عقار جديد</h2>
+  <form [formGroup]="propertyForm" (ngSubmit)="submitForm()" enctype="multipart/form-data">
+    <div class="form-columns">
+
+      <!-- العمود -->
+      <div class="form-column">
+        <label for="title">اسم العقار</label>
+        <input id="title" type="text" formControlName="title" placeholder="اسم العقار" title="اسم العقار" />
+
+        <label for="location">مكان العقار (المحافظة أو الإقليم)</label>
+        <input id="location" type="text" formControlName="location" placeholder="مثلاً: القاهرة الجديدة" title="مكان العقار" />
+
+        <label for="description">وصف تفصيلي للعقار</label>
+        <textarea id="description" rows="4" formControlName="description" placeholder="مثلاً: شقة 3 غرف وصالة في حي راقٍ" title="وصف العقار"></textarea>
+
+        <label for="images">أرفق صور العقار</label>
+        <input id="images" type="file" (change)="onImageChange($event)" multiple title="صور العقار" />
+
+        <!-- عرض المعاينة -->
+        <div class="image-preview" *ngIf="imagePreviews.length > 0">
+          <h4>معاينة الصور:</h4>
+          <div class="preview-grid">
+            <img *ngFor="let img of imagePreviews" [src]="img" alt="معاينة الصورة" />
+          </div>
+        </div>
+
+        <label for="price">أضف سعر العقار</label>
+        <input id="price" type="text" formControlName="price" placeholder="مثلاً: ٣٠٠٠٠٠ جنيه" title="سعر العقار" />
+
+        <label for="rooms">عدد الغرف</label>
+        <input id="rooms" type="text" formControlName="rooms" placeholder="مثلاً: ٣" title="عدد الغرف" />
+
+        <label for="bathrooms">عدد الحمامات</label>
+        <input id="bathrooms" type="text" formControlName="bathrooms" placeholder="مثلاً: ٢" title="عدد الحمامات" />
+
+        <label for="area">المساحة بالمتر</label>
+        <input id="area" type="text" formControlName="area" placeholder="مثلاً: ١٥٠" title="المساحة" />
+
+        <label for="status">حالة العقار</label>
+        <select id="status" formControlName="status" title="حالة العقار">
+          <option value="Available">متاح</option>
+          <option value="Sold">تم البيع</option>
+          <option value="Rented">مؤجر</option>
+        </select>
+
+        <label for="availabFrom">تاريخ التوفر</label>
+        <input id="availabFrom" type="date" formControlName="availabFrom" title="تاريخ التوفر" />
+
+        <div class="radio-group">
+          <span>الغرض من العقار:</span>
+          <label for="sale"><input id="sale" type="radio" value="Sale" formControlName="purpose" /> للبيع</label>
+          <label for="rent"><input id="rent" type="radio" value="Rent" formControlName="purpose" /> للإيجار</label>
+        </div>
+
+        <label for="mapLink">رابط العنوان على خريطة جوجل</label>
+        <input id="mapLink" type="text" formControlName="mapLink" placeholder="مثلاً: https://maps.google.com/..." title="رابط جوجل" />
+      </div>
+    </div>
+
+    <p class="note">تأكد من بياناتك و إضافة وسيلة تواصل قبل النشر</p>
+
+    <div class="buttons">
+      <button type="submit" class="publish">نشر</button>
+      <button type="button" class="draft" disabled>حفظ كمسودة</button>
+    </div>
+  </form>
+</div>

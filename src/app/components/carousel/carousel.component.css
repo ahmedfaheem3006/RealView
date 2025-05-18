@@ -1,0 +1,195 @@
+/* ====== Hero Section ====== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.hero-slick {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-slick img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.hero-slick img.active {
+  opacity: 0.5; /* إظهار الصورة النشطة */
+  z-index: 1;
+}
+
+/* ====== Hero Texts ====== */
+.hero .text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #1c4239;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.hero .text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.hero .text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* ====== Supportive Text (top) ====== */
+.sup-text {
+  text-align: right;
+  margin-left: 65pc;
+  padding-right: 85px;
+  margin-bottom: 20px;
+  max-width: 500px;
+  width: 100%;
+  align-self: flex-end;
+  color: #1c4239;
+}
+
+.sup-text h2 {
+  color: #d2691e;
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sup-text p {
+  font-size: 3rem;
+  font-weight:500;
+  width: 450px;
+  line-height: 1.6;
+}
+
+/* ====== Search Bar ====== */
+.search-bar {
+  position: relative;
+  z-index: 3;
+  margin-top: 20px;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  width: 90%;
+}
+
+.search-bar input,
+.search-bar select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 150px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.search-bar input:focus,
+.search-bar select:focus {
+  border-color: #1c4239;
+  outline: none;
+}
+
+/* ====== Buttons ====== */
+.search-bar .map-search,
+.search-bar .search-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.search-bar .map-search {
+  background-color: white;
+  border: 1px solid #1c4239;
+  color: #1c4239;
+}
+
+.search-bar .map-search:hover {
+  background-color: #e5f1ee;
+}
+
+.search-bar .search-button {
+  background-color: #1c4239;
+  color: white;
+  border: none;
+}
+
+.search-bar .search-button:hover {
+  background-color: #16352e;
+}
+
+/* ====== Visually Hidden Labels ====== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ====== Responsive Adjustments ====== */
+@media (max-width: 768px) {
+  .hero .text h2 {
+    font-size: 2rem;
+  }
+
+  .hero .text p,
+  .sup-text p {
+    font-size: 1rem;
+  }
+
+  .sup-text {
+    padding-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+    align-self: center;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .search-bar input,
+  .search-bar select,
+  .search-bar .map-search,
+  .search-bar .search-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="dashboard-container" *ngIf="user">
+  <section class="user-info">
+    <h2 class="title">الصفحة الشخصية</h2>
+    <p><strong>الاسم:</strong> {{ user.username }}</p>
+    <p><strong>تاريخ الانضمام:</strong> {{ user.createdAt | date:'yyyy-MM-dd' }}</p>
+    <p><strong>المدينة:</strong> {{ user.address }}</p>
+  </section>
+
+  <section class="user-properties">
+    <h3>إعلانات بواسطة {{ user.username }}</h3>
+    <div class="properties-grid">
+      <div class="property-card" *ngFor="let property of properties">
+        <img [src]="property.images[0]" alt="property" *ngIf="property.images?.length">
+        <h4>{{ property.title }}</h4>
+        <p>{{ property.description }}</p>
+        <div class="actions">
+          <button (click)="deleteProperty(property._id)">🗑️</button>
+          <button [routerLink]="['/edit-property', property._id]">✏️</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

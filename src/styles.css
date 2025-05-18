@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --main-color: #34495e;
+  --white-color: #fff;
+  --black-color: #000;
+  --paragraph-color: #575a7b;
+  --btn-hover-color: #7381bb;
+  --main-transition: 0.4s;
+  --bg-green-color: #808fe3;
+  --border-color: #ededed;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui;
+  overflow-x: hidden;
+  direction: rtl;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  padding-top: 120px;
+}
+img {
+  max-width: 100%;
+}
+.section-padding {
+  padding: 70px 0 50px;
+}
+.color {
+  color: var(--main-color);
+}
+.btn {
+  background-color: var(--main-color) !important;
+  color: var(--white-color) !important;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  letter-spacing: 0.5px !important;
+  border-radius: 50px !important;
+  font-weight: bold !important;
+  transition: var(--main-transition) !important;
+}
+.btn:hover,
+.btn:active {
+  background-color: var(--btn-hover-color) !important;
+  color: var(--black-color) !important;
+}

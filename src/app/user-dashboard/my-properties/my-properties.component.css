@@ -1,0 +1,28 @@
+.content {
+    margin-left: 260px;
+    padding: 20px;
+  }
+  
+  .property-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:first-child {
+    background: #3498db;
+    color: white;
+  }
+  
+  button:last-child {
+    background: #e74c3c;
+    color: white;
+  }
+  

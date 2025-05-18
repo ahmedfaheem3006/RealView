@@ -1,0 +1,146 @@
+<header>
+  <nav
+    class="navbar navbar-expand-lg bg-body-tertiary position-fixed w-100 z-3 shadow-sm"
+  >
+    <div class="container-fluid">
+      <!-- الشعار -->
+      <a class="navbar-brand" routerLink="/" aria-label="الصفحة الرئيسية">
+        <img
+          src="assets/images/logo.jpg"
+          alt="شعار الموقع"
+          width="70"
+          height="70"
+        />
+      </a>
+
+      <!-- زر القائمة للشاشات الصغيرة -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="فتح أو إغلاق القائمة"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- روابط التنقل -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >الرئيسية</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/about"
+              routerLinkActive="active-link"
+              >من نحن</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/latest-sale-properties"
+              routerLinkActive="active-link"
+              >عقارات للبيع</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/latest-rent-properties"
+              routerLinkActive="active-link"
+              >عقارات للإيجار</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/add-property"
+              routerLinkActive="active-link"
+              >إضافة عقار
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/price-guide"
+              routerLinkActive="active-link"
+              >دليل الأسعار</a
+            >
+          </li>
+
+          <!-- أيقونة المستخدم مع القائمة المنسدلة - ستظهر فقط إذا كان المستخدم مسجل دخول -->
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <div class="nav-link position-relative user-menu-container">
+              <i
+                class="bi bi-person-circle fs-4 user-icon-nav"
+                role="button"
+                title="قائمة المستخدم"
+                aria-label="فتح قائمة المستخدم"
+                [attr.aria-expanded]="showDropdown"
+                (click)="toggleDropdown($event)"
+              ></i>
+
+              <!-- القائمة المنسدلة للمستخدم -->
+              <!-- القائمة المنسدلة للمستخدم -->
+              <div
+                *ngIf="showDropdown"
+                class="dropdown-menu-custom nav-dropdown mt-2 p-2 shadow rounded bg-white text-end"
+              >
+                <div class="dropdown-header border-bottom pb-2 mb-2">
+                  <span class="fw-bold">مرحبًا، {{ username }}</span>
+                </div>
+
+                <a class="dropdown-item py-2" routerLink="/user-profile">
+                  <i class="bi bi-person"></i>
+                  <span>الصفحة الشخصية</span>
+                </a>
+
+                <a class="dropdown-item py-2" routerLink="/saved-properties">
+                  <i class="bi bi-heart"></i>
+                  <span>المفضلة</span>
+                </a>
+
+                <a class="dropdown-item py-2" routerLink="/client-dashboard">
+                  <i class="bi bi-speedometer2"></i>
+                  <span>لوحة التحكم</span>
+                </a>
+
+                <div class="dropdown-divider my-2"></div>
+
+                <button
+                  class="dropdown-item py-2 text-danger"
+                  (click)="logout()"
+                >
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>تسجيل الخروج</span>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- زر تسجيل الدخول - ظاهر فقط للمستخدمين غير المسجلين -->
+        <div class="d-flex align-items-center" *ngIf="!isLoggedIn">
+          <a
+            class="btn btn-primary ms-3 px-4 py-2"
+            routerLink="/login"
+            aria-label="تسجيل الدخول"
+          >
+            تسجيل الدخول
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

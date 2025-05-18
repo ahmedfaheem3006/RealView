@@ -1,0 +1,10 @@
+<div class="counters-section">
+  <div class="counter" *ngFor="let item of counters">
+    <div class="icon-container">
+      <i class="fa" [ngClass]="item.icon"></i>
+    </div>
+    <h2 class="number">{{ item.number }}</h2>
+    <p class="title">{{ item.title }}</p>
+    <p class="description">{{ item.description }}</p>
+  </div>
+</div>

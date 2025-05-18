@@ -1,0 +1,74 @@
+.add-property-section {
+  padding: 80px 20px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: green;
+}
+.add-property-section p{
+  color: #333;
+}
+.add-property-content {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.add-property-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.add-property-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.add-property-content button {
+  background-color: #ff8e3d;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-property-content button:hover {
+  background-color: #fa8837;
+  transform: translateY(-3px);
+}
+
+/* Animation for fade in */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-property-content h2 {
+    font-size: 2rem;
+  }
+
+  .add-property-content p {
+    font-size: 1rem;
+  }
+
+  .add-property-content button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}

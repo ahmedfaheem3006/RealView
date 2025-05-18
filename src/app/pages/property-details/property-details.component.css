@@ -1,0 +1,197 @@
+
+
+.property-details-container {
+    font-family: "Cairo", sans-serif;
+    direction: rtl;
+    padding: 30px;
+    background-color: #fafafa;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    max-width: 1200px;
+    margin: 20px auto;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #004d40;
+  }
+   
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00695c;
+    background-color: #e0f2f1;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .images {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .images img {
+    width: 32%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .publish-date {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .owner-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: slideIn 1s forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .owner-name {
+    font-weight: bold;
+    font-size: 20px;
+    color: #004d40;
+  }
+  
+  .owner-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .owner-actions button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background-color: chocolate;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .owner-actions button:hover {
+    background-color: rgb(231, 121, 41);
+    transform: translateY(-5px);
+  }
+  
+  .property-section {
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  .property-section h3 {
+    font-size: 22px;
+    color: chocolate;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .property-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .property-section ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .features span {
+    background-color: #e0f2f1;
+    padding: 6px 12px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #004d40;
+    font-weight: bold;
+  }
+  
+  iframe {
+    border-radius: 12px;
+    border: none;
+    width: 100%;
+    height: 300px;
+    transition: transform 0.3s ease;
+  }
+  
+  iframe:hover {
+    transform: scale(1.02);
+  }
+  
+  @media (max-width: 768px) {
+    .images {
+      flex-direction: column;
+    }
+  
+    .images img {
+      width: 100%;
+    }
+  
+    .owner-actions {
+      flex-direction: column;
+    }
+  
+    .property-section h3 {
+      font-size: 18px;
+    }
+  }
+  
+  .message-box {
+    color: chocolate;
+    font-family: Arial, Helvetica, sans-serif;
+
+  }

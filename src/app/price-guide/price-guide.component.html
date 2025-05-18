@@ -1,0 +1,38 @@
+<div class="price-guide">
+  <h2>📊 دليل الأسعار</h2>
+
+  <div class="controls">
+    <label>
+      <input type="radio" name="purpose" value="sale" [(ngModel)]="purpose" (change)="switchPurpose('sale')" />
+      للبيع
+    </label>
+    <label>
+      <input type="radio" name="purpose" value="rent" [(ngModel)]="purpose" (change)="switchPurpose('rent')" />
+      للإيجار
+    </label>
+
+    <label for="area-select">اختر المنطقة:</label>
+    <select id="area-select" [(ngModel)]="selectedArea" (change)="loadChart(); loadRelatedProperties()" aria-label="اختر المنطقة">
+      <option value="">-- اختر --</option>
+      <option *ngFor="let area of areas" [value]="area">{{ area }}</option>
+    </select>
+  </div>
+
+  <div class="chart-container">
+    <canvas baseChart
+            [data]="chartData"
+            [type]="chartType"
+            [options]="chartOptions">
+    </canvas>
+  </div>
+
+  <div class="related-properties" *ngIf="relatedProperties.length > 0">
+    <h3>🏡 متاح في {{ selectedArea }}</h3>
+    <div class="property-card" *ngFor="let property of relatedProperties">
+      <h4>{{ property.title }}</h4>
+      <p>{{ property.price | number }} جنيه</p>
+    </div>
+    <a class="more-btn" href="/latest-sale-properties.component">تصفح المزيد</a>
+
+  </div>
+</div>

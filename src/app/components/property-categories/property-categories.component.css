@@ -1,0 +1,41 @@
+.property-categories {
+  margin: 40px 0;
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.property-categories h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+  position: relative;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.category-btn {
+  background: white;
+  color: var(--main-color);
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid var(--main-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.category-btn:hover {
+  background-color: var(--main-color);
+  color: white;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}

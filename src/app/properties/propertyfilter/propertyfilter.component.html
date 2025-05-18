@@ -1,0 +1,32 @@
+<div class="filter-container">
+  <div class="row">
+    <!-- فلترة النوع -->
+    <div class="col-md-3">
+      <label for="type">النوع:</label>
+      <select class="form-control" id="type" [(ngModel)]="filter.type" (change)="applyFilter()">
+        <option value="">الكل</option>
+        <option value="Apartment">شقة</option>
+        <option value="Villa">فيلا</option>
+        <option value="Office">مكتب</option>
+      </select>
+    </div>
+
+    <!-- أقل سعر -->
+    <div class="col-md-3">
+      <label for="minPrice">أقل سعر:</label>
+      <input type="number" class="form-control" id="minPrice" [(ngModel)]="filter.minPrice" (input)="applyFilter()">
+    </div>
+
+    <!-- أعلى سعر -->
+    <div class="col-md-3">
+      <label for="maxPrice">أعلى سعر:</label>
+      <input type="number" class="form-control" id="maxPrice" [(ngModel)]="filter.maxPrice" (input)="applyFilter()">
+    </div>
+
+    <!-- الموقع -->
+    <div class="col-md-3">
+      <label for="location">الموقع:</label>
+      <input type="text" class="form-control" id="location" [(ngModel)]="filter.location" (input)="applyFilter()">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<h2 class="title">إدارة المنشورات</h2>
+
+<table class="posts-table">
+  <thead>
+    <tr>
+      <th>العنوان</th>
+      <th>النوع</th>
+      <th>الحالة</th>
+      <th>تاريخ النشر</th>
+      <th>الإجراءات</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <td>{{ post.title }}</td>
+      <td>{{ post.type }}</td>
+      <td>{{ post.status }}</td>
+      <td>{{ post.publishDate }}</td>
+      <td>
+        <button (click)="editPost(post.id)">تعديل</button>
+        <button (click)="deletePost(post.id)">حذف</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

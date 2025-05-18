@@ -1,0 +1,23 @@
+<h2 class="title">إدارة المستخدمين</h2>
+
+<table class="users-table">
+  <thead>
+    <tr>
+      <th>الاسم</th>
+      <th>البريد الإلكتروني</th>
+      <th>الدور</th>
+      <th>الإجراءات</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.role }}</td>
+      <td>
+        <button (click)="editUser(user.id)">تعديل</button>
+        <button (click)="deleteUser(user.id)">حذف</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

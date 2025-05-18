@@ -1,0 +1,42 @@
+<section class="hero" id="hero">
+  <div class="hero-slick">
+    <img 
+      *ngFor="let img of images; let i = index" 
+      [src]="img" 
+      [class.active]="i === currentIndex"
+      alt="hero image"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="text">
+    <div class="sup-text">
+    <h2>سمارت دار</h2>
+    <p>منصة عقارية تمكنك من تداول العقار عبر موقعها الإلكتروني وتضمن لك الوصول لهدفك ...
+      بأسرع الطرق وأفضلها</p>
+    </div>
+    <h2>حابب تعيش فين؟</h2>
+  </div>
+
+
+  <div class="search-bar">
+    <input type="text" placeholder="ابحث بالمنطقة: مدينة نصر، المعادي.." class="search-input" />
+  
+    <label for="propertyType" class="visually-hidden">نوع العقار</label>
+<select id="propertyType" class="property-type">
+  <option selected disabled>نوع العقار</option>
+  <option>شقة</option>
+  <option>فيلا</option>
+  <option>أرض</option>
+  <option>مكتب</option>
+</select>
+
+  
+    <input type="text" placeholder="السعر" class="price-input" />
+  
+    <button class="map-search">البحث بالخريطة</button>
+  
+    <button class="search-button">بحث</button>
+  </div>
+  
+</section>

@@ -1,0 +1,18 @@
+<div class="contact-container">
+  <h2>📥 طلبات التواصل</h2>
+
+  <div *ngIf="contactRequests.length === 0" class="empty-msg">
+    لا توجد طلبات تواصل حتى الآن.
+  </div>
+
+  <ul class="request-list">
+    <li *ngFor="let request of contactRequests" class="request-card">
+      <div class="request-details">
+        <h4>{{ request.name }}</h4>
+        <p class="message">💬 {{ request.message }}</p>
+        <p class="phone">📞 {{ request.phone }}</p>
+      </div>
+      <button (click)="deleteRequest(request.id)">🗑️ حذف</button>
+    </li>
+  </ul>
+</div>

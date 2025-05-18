@@ -1,0 +1,99 @@
+<div class="register-wrapper">
+  <div class="register-box">
+    <h2>✨ أنشئ حسابك</h2>
+    
+    <!-- عرض رسالة الخطأ العامة إذا كانت موجودة -->
+    <div *ngIf="errorMessage" class="error-alert">
+      {{ errorMessage }}
+    </div>
+    
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-grid">
+
+        <div class="form-group">
+          <input type="text" formControlName="username" placeholder="اسم المستخدم" />
+          <div *ngIf="submitted && f['username'].errors" class="error">
+            <span *ngIf="f['username'].errors['required']">اسم المستخدم مطلوب.</span>
+            <span *ngIf="f['username'].errors['minlength']">يجب أن يتكون اسم المستخدم من 3 أحرف على الأقل.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" formControlName="nationalId" placeholder="الرقم القومي" />
+          <div *ngIf="submitted && f['nationalId'].errors" class="error">
+            <span *ngIf="f['nationalId'].errors['required']">الرقم القومي مطلوب.</span>
+            <span *ngIf="f['nationalId'].errors['pattern']">الرقم القومي يجب أن يتكون من 14 رقم.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="email" formControlName="email" placeholder="البريد الإلكتروني" />
+          <div *ngIf="submitted && f['email'].errors" class="error">
+            <span *ngIf="f['email'].errors['required']">البريد الإلكتروني مطلوب.</span>
+            <span *ngIf="f['email'].errors['email']">صيغة البريد الإلكتروني غير صحيحة.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="password" formControlName="password" placeholder="كلمة المرور" />
+          <div *ngIf="submitted && f['password'].errors" class="error">
+            <span *ngIf="f['password'].errors['required']">كلمة المرور مطلوبة.</span>
+            <span *ngIf="f['password'].errors['minlength']">يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">الجنس</label>
+          <select id="gender" formControlName="gender">
+            <option value="">اختر الجنس</option>
+            <option value="Male">ذكر</option>
+            <option value="Female">أنثى</option>
+          </select>
+          <div *ngIf="submitted && f['gender'].errors" class="error">
+            <span *ngIf="f['gender'].errors['required']">اختيار الجنس مطلوب.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="number" formControlName="age" placeholder="العمر" />
+          <div *ngIf="submitted && f['age'].errors" class="error">
+            <span *ngIf="f['age'].errors['required']">العمر مطلوب.</span>
+            <span *ngIf="f['age'].errors['min'] || f['age'].errors['max']">العمر يجب أن يكون بين 1 و 100.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" formControlName="phone" placeholder="رقم الهاتف" />
+          <div *ngIf="submitted && f['phone'].errors" class="error">
+            <span *ngIf="f['phone'].errors['required']">رقم الهاتف مطلوب.</span>
+            <span *ngIf="f['phone'].errors['pattern']">رقم الهاتف يجب أن يكون من 10 إلى 15 رقم.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <select formControlName="userType" title="type" placeholder="نوع المستخدم">
+            <option value="">اختر نوع المستخدم</option>
+            <option value="Buyer">مشتري</option>
+            <option value="Seller">بائع</option>
+            <option value="Admin">مسؤول</option>
+          </select>
+          <div *ngIf="submitted && f['userType'].errors" class="error">
+            <span *ngIf="f['userType'].errors['required']">نوع المستخدم مطلوب.</span>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <input type="text" formControlName="address" placeholder="العنوان" />
+          <div *ngIf="submitted && f['address'].errors" class="error">
+            <span *ngIf="f['address'].errors['required']">العنوان مطلوب.</span>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="loading">
+        <span *ngIf="!loading">تسجيل</span>
+        <span *ngIf="loading">جاري التسجيل...</span>
+      </button>
+    </form>
+  </div>
+</div>

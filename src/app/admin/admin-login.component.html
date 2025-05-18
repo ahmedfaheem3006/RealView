@@ -1,0 +1,18 @@
+<div class="login-container">
+    <h2>تسجيل دخول المسؤول</h2>
+    <form (ngSubmit)="login()">
+      <label>اسم المستخدم:</label>
+      <input [(ngModel)]="username" name="username" required />
+  
+      <label>كلمة المرور:</label>
+      <input type="password" [(ngModel)]="password" name="password" required />
+  
+      <button type="submit">دخول</button>
+      <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+      <a routerLink="/admin/change-password">تغيير كلمة المرور</a>
+      <a routerLink="/auth/forgot-password">هل نسيت كلمة المرور؟</a>
+
+    </form>
+  </div>
+  

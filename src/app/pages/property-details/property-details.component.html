@@ -1,0 +1,67 @@
+<div *ngIf="property" class="property-details-container">
+
+  <div class="header-section">
+    <h2>{{ property.title }}</h2>
+    <p class="price">{{ property.price | number }} جنيه</p>
+  </div>
+
+  <div class="images">
+    <img *ngFor="let img of property.images" [src]="img" alt="صورة العقار" />
+  </div>
+
+  <p class="publish-date">تاريخ النشر: {{ property.createdAt | date:'yyyy/MM/dd' }}</p>
+
+  <div class="owner-box">
+    <div class="owner-info">
+      <p class="owner-name">رقم معرف المالك: {{ property.addedBy }}</p>
+    </div>
+    <div class="owner-actions">
+      <button (click)="showMessage('واتس آب')">واتس آب</button>
+      <button (click)="showMessage('اتصال')">اتصال</button>
+      <button (click)="addToFavorites()">إضافة للمفضلة</button>
+      <button (click)="showMessage('مشاركة')">مشاركة</button>
+    </div>
+  </div>
+
+  <div *ngIf="message" class="message-box">
+    <p>{{ message }}</p>
+  </div>
+
+  <div class="property-section">
+    <h3>الوصف</h3>
+    <ul>
+      <li><strong>الموقع:</strong> {{ property.location }}</li>
+      <li><strong>المساحة:</strong> {{ property.area }} متر مربع</li>
+      <li><strong>عدد الغرف:</strong> {{ property.rooms }}</li>
+      <li><strong>عدد الحمامات:</strong> {{ property.bathrooms }}</li>
+      <li><strong>الغرض:</strong> {{ property.purpose }}</li>
+      <li><strong>الفئة:</strong> {{ property.category }} / {{ property.subCategory }}</li>
+    </ul>
+  </div>
+
+  <div class="property-section">
+    <h3>تفاصيل العقار</h3>
+    <p>{{ property.description }}</p>
+  </div>
+
+  
+
+
+    <h3>المميزات</h3>
+    <div class="features">
+      <span *ngFor="let f of property.features">{{ f }}</span>
+    </div>
+  </div>
+
+  <div class="property-section">
+    <h3>الموقع على الخريطة</h3>
+    <iframe
+      [src]="mapUrl"
+      width="100%"
+      height="300"
+      frameborder="0"
+      allowfullscreen
+      title="خريطة الموقع">
+    </iframe>
+  </div>
+

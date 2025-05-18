@@ -1,0 +1,12 @@
+<section class="property-categories" *ngIf="categories.length > 0">
+  <h2>تصنيفات العقارات</h2>
+  <div class="categories">
+    <button
+      class="category-btn"
+      *ngFor="let category of categories"
+      (click)="selectCategory(category)"
+    >
+      {{ category }}
+    </button>
+  </div>
+</section>

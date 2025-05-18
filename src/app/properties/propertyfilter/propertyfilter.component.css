@@ -1,0 +1,16 @@
+.filter-container {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    margin-bottom: 10px;
+  }
+  

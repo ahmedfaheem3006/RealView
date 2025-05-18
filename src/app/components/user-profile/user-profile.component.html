@@ -1,0 +1,31 @@
+<div class="profile-container">
+  
+    <div class="main-content">
+      <h2 class="title">التعديل على الصفحة الشخصية</h2>
+  
+      <div class="icon-container">
+        <i class="bi bi-person-circle fs-1"></i>
+      </div>
+  
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="form-layout">
+        <h5>بيانات شخصية</h5>
+  
+        <input formControlName="username" placeholder="اسم المستخدم">
+        <input formControlName="nationalId" placeholder="الرقم القومي">
+        <input formControlName="age" placeholder="العمر">
+        <input formControlName="gender" placeholder="النوع">
+        <h5>معلومات التواصل</h5>
+        <input formControlName="email" placeholder="البريد الإلكتروني">
+        <input formControlName="phone" placeholder="رقم الهاتف">
+        <input formControlName="userType" placeholder="نوع المستخدم">
+        <input formControlName="address" placeholder="العنوان">
+        <input type="password" formControlName="password" placeholder="كلمة المرور">
+  
+        <div class="btn-group">
+          <button type="submit" [disabled]="profileForm.invalid">حفظ التغييرات</button>
+          <button type="button" class="cancel">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

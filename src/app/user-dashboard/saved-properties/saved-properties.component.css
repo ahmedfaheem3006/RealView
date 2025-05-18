@@ -1,0 +1,73 @@
+.saved-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+  background: #fdfdfd;
+}
+
+.saved-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #333;
+}
+
+.empty-msg {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+}
+
+.saved-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  padding: 15px;
+  transition: transform 0.2s ease;
+}
+
+.saved-card:hover {
+  transform: scale(1.02);
+}
+
+.saved-card img {
+  width: 120px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.details {
+  flex-grow: 1;
+}
+
+.details h4 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #222;
+}
+
+.details p {
+  margin: 0 0 10px;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #777;
+}

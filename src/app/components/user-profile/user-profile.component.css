@@ -1,0 +1,139 @@
+.profile-container {
+    display: flex;
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background: #f2f2f2;
+    padding: 1rem;
+    border-left: 1px solid #ccc;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2e7d32;
+  }
+  
+  .icon-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  .form-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  button {
+    padding: 0.6rem 1.5rem;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button.cancel {
+    background-color: #ccc;
+    color: #000;
+  }
+  
+
+  .error-message, .success-message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.error-text {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* تحسين أسلوب الأزرار */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-group button {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-group button[type="submit"] {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+}
+
+.btn-group button[type="submit"]:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.btn-group .cancel {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-group button:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,11 @@
+<!-- property-card.component.html -->
+<div class="card">
+  <img [src]="property.image" class="card-img-top" alt="صورة العقار">
+  <div class="card-body">
+    <h5 class="card-title">{{ property.title }}</h5>
+    <p class="card-text"><strong>النوع:</strong> {{ property.type }}</p>
+    <p class="card-text"><strong>الموقع:</strong> {{ property.location }}</p>
+    <p class="card-text"><strong>السعر:</strong> ${{ property.price }}</p>
+    <a [routerLink]="['/property-details', property.id]" class="btn btn-primary">عرض التفاصيل</a>
+  </div>
+</div>

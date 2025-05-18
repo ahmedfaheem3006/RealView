@@ -1,0 +1,24 @@
+<div class="content">
+  <h2>عقاراتي</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>الصورة</th>
+        <th>العنوان</th>
+        <th>السعر</th>
+        <th>الإجراءات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let property of properties">
+        <td><img [src]="property.image" alt="property" class="property-img"></td>
+        <td>{{ property.title }}</td>
+        <td>{{ property.price | currency:'USD' }}</td>
+        <td>
+          <button (click)="editProperty(property.id)">تعديل</button>
+          <button (click)="deleteProperty(property.id)">حذف</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

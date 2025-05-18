@@ -1,0 +1,15 @@
+<div class="saved-container">
+  <h2>العقارات المحفوظة</h2>
+  <div *ngIf="savedProperties.length === 0" class="empty-msg">
+    لا توجد عقارات محفوظة بعد.
+  </div>
+
+  <div *ngFor="let property of savedProperties" class="saved-card">
+    <img [src]="property.image" alt="صورة العقار">
+    <div class="details">
+      <h4>{{ property.title }}</h4>
+      <p>{{ property.price | currency:'USD' }}</p>
+      <button (click)="removeFromSaved(property.id)">إزالة ❌</button>
+    </div>
+  </div>
+</div>

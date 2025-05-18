@@ -1,0 +1,37 @@
+<div class="latest-properties-container">
+    <div class="filters">
+      <select title="اختر نوع العقار" [(ngModel)]="selectedType">
+        <option value="">نوع العقار</option>
+        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+      </select>
+  
+      <select title="اختر المحافظة" [(ngModel)]="selectedLocation">
+        <option value="">المحافظة</option>
+        <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+      </select>
+  
+      <button (click)="fetchProperties()">بحث</button>
+    </div>
+  
+    <div class="filter-bar">
+      <h2>أحدث العقارات للإيجار</h2>
+    </div>
+  
+    <div class="properties-grid">
+      <div class="property-card" *ngFor="let property of properties">
+        <img [src]="property.images[0]" alt="صورة العقار" />
+        <h3>{{ property.title }}</h3>
+        <p>{{ property.description }}</p>
+        <div class="info">
+          <span>عدد الغرف: {{ property.rooms }}</span>
+          <span>الحمامات: {{ property.bathrooms }}</span>
+          <span>المساحة: {{ property.area }} م²</span>
+        </div>
+        <div class="price">
+          {{ property.price | number }} جنيه
+        </div>
+        <button class="details-btn" [routerLink]="['/property', property.id]">عرض التفاصيل</button>
+      </div>
+    </div>
+  </div>
+  

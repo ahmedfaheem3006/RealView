@@ -1,0 +1,43 @@
+<div class="login-container">
+  <div class="login-box">
+    <div class="login-image">
+      <img 
+        src="../../assets/images/login/download.png" 
+        alt="تسجيل الدخول"
+        loading="lazy"
+      />
+    </div>
+    <div class="login-form">
+      <h2>مرحبًا بعودتك 👋</h2>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input 
+            type="email" 
+            placeholder="أدخل بريدك الإلكتروني" 
+            [(ngModel)]="email" 
+            name="email"
+            required 
+          />
+        </div>
+        <div class="form-group">
+          <input 
+            type="password" 
+            placeholder="أدخل كلمة المرور" 
+            [(ngModel)]="password" 
+            name="password"
+            required 
+          />
+        </div>
+
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+        <div class="form-links">
+          <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+          <a routerLink="/register" class="register-link">إنشاء حساب جديد</a>
+        </div>
+        <button type="submit">تسجيل الدخول</button>
+      </form>
+    </div>
+  </div>
+</div>

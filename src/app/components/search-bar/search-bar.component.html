@@ -1,0 +1,4 @@
+<form (submit)="onSearch(); $event.preventDefault()" class="search-bar">
+  <input type="text" placeholder="🔍 ابحث عن عقار..." [(ngModel)]="searchQuery" name="search" class="search-input" />
+  <button type="submit" class="search-btn">بحث</button>
+</form>

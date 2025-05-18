@@ -1,0 +1,120 @@
+.edit-property-container {
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 2rem;
+    color: #0a4e4e;
+  }
+  
+  .form-columns {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .form-column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  input, textarea, select {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: white;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #0a4e4e;
+    outline: none;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .radio-group label {
+    margin-right: 10px;
+    font-weight: 500;
+  }
+  
+  .note {
+    margin-top: 1.5rem;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  button {
+    padding: 0.8rem 2rem;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button.publish {
+    background-color: #0a4e4e;
+    color: white;
+  }
+  
+  button.publish:hover {
+    background-color: #087171;
+  }
+  
+  button.draft {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .image-preview {
+    margin-top: 1rem;
+  }
+  
+  .image-preview h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .preview-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .preview-grid img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  

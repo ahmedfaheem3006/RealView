@@ -1,0 +1,20 @@
+<section class="contact-section" id="contact">
+  <div class="contact-content">
+    
+    <div class="contact-form" data-aos="fade-left">
+      <h2>تواصل معانا</h2>
+      <form (ngSubmit)="submitForm()">
+        <input type="text" [(ngModel)]="name" name="name" placeholder="اسمك" required />
+        <input type="email" [(ngModel)]="email" name="email" placeholder="بريدك الإلكتروني" required />
+        <input type="tel" [(ngModel)]="phone" name="phone" placeholder="رقم الهاتف" required />
+        <textarea [(ngModel)]="message" name="message" placeholder="رسالتك" required></textarea>
+        <button type="submit">إرسال الرسالة</button>
+      </form>
+    </div>
+
+    <div class="contact-image" data-aos="fade-right">
+      <img src="assets/images/contact/images.png" alt="Contact Us" loading="lazy" />
+    </div>
+
+  </div>
+</section>

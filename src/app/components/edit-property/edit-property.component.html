@@ -1,0 +1,35 @@
+<div class="edit-property-container">
+    <h2 class="title">التعديل على الإعلان</h2>
+    <form [formGroup]="propertyForm" (ngSubmit)="submitForm()" enctype="multipart/form-data">
+      <div class="form-columns">
+        <div class="form-column">
+          <input type="text" formControlName="title" placeholder="عنوان العقار" />
+          <input type="text" formControlName="location" placeholder="مثلاً: القاهرة" />
+          <textarea formControlName="description" rows="4" placeholder="وصف العقار بالتفصيل"></textarea>
+  
+          <input type="file" (change)="onImageChange($event)" multiple />
+          <div class="image-preview" *ngIf="imagePreviews.length > 0">
+            <img *ngFor="let img of imagePreviews" [src]="img" alt="صورة معاينة" />
+          </div>
+  
+          <input type="text" formControlName="price" placeholder="السعر" />
+  
+          <div class="radio-group">
+            <label><input type="radio" formControlName="purpose" value="Sale" /> للبيع</label>
+            <label><input type="radio" formControlName="purpose" value="Rent" /> للإيجار</label>
+          </div>
+  
+          <input type="number" formControlName="rooms" placeholder="عدد الغرف" />
+          <input type="number" formControlName="bathrooms" placeholder="عدد الحمامات" />
+          <input type="number" formControlName="area" placeholder="المساحة بالمتر" />
+          <input type="text" formControlName="mapLink" placeholder="رابط الموقع على خرائط جوجل" />
+        </div>
+      </div>
+  
+      <div class="buttons">
+        <button type="submit" class="save">💾 حفظ التغييرات</button>
+        <button type="button" class="cancel" routerLink="/">إلغاء</button>
+      </div>
+    </form>
+  </div>
+  
